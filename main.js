@@ -161,6 +161,11 @@
         if ( depth > 10000 ) {
             possibilities.stone = 1;
         }
+
+        // This is already crazy fast, don't increase it more
+        if ( diff > 12 ) {
+            diff = 12;
+        }
     }
     
     function tick( time ) {
