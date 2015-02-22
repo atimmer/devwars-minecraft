@@ -18,8 +18,8 @@
 ;(function($) {
     
     var $game;
-    var scroll = 3;
-    var diff = 3;
+    var scroll;
+    var diff;
     var template = '<div class="blockRow">'
     + '{{#each rows}}'
     + '<div class="block {{class}}"></div>'
@@ -33,14 +33,7 @@
         diamond: 100,
         emerald: 500
     };
-    var possibilities = {
-        emerald: 0.001,
-        diamond: 0.005,
-        gold: 0.02,
-        iron: 0.1,
-        stone: 0.4,
-        ground: 1
-    };
+    var possibilities;
     
     var points = 0;
     
@@ -70,8 +63,6 @@
         var html = '';
         
         row = $.map(row, function(item) {
-        
-            
             return {
                 class: item
             };
@@ -82,7 +73,8 @@
         });
         
         $game.append( html );
-        
+
+        maybeMakeHarder();
     }
     
     function clickBlock( e ) {
@@ -120,52 +112,60 @@
         $('.score').html(points);
     }
 
-    function maybeMakeNewRow() {
+    function lastRowDepth() {
         var $lastRow = $('.blockRow:last-child');
         var lastOffset = $lastRow.offset();
 
+        return lastOffset.top;
+    }
+
+    function maybeMakeNewRow() {
         // If we need a new row make one
-        if ( scroll + $(window).height() + 50 > lastOffset.top ) {
+        if ( scroll + $(window).height() + 50 > lastRowDepth() ) {
             makeRow();
         }
     }
     
-    function update( time ) {
+    function update() {
         scroll += diff;
 
         maybeMakeNewRow();
-        
-        if ( time > 5000 ) {
-            diff = 6;
-        }
-        
-        if ( time > 10000 ) {
-            diff = 9;
-            
-            possibilities = {
-                emerald: 0.005,
-                diamond: 0.01,
-                gold: 0.04,
-                iron: 0.2,
-                stone: 0.7,
-                ground: 1
-            };
-        }
-        
-        if ( time > 15000 ) {
-            diff = 12;
-        }
-        
-        if ( time > 20000 ) {
-            diff = 15;
-        }
+        maybeMakeHarder();
         
         $(window).scrollTop(scroll);
+    }
+
+    function maybeMakeHarder() {
+        var depth = lastRowDepth();
+
+        if ( depth > 300 ) {
+            possibilities.stone = 0.4;
+        }
+
+        if ( depth > 1000 ) {
+            possibilities.stone = 0.7;
+            diff = 3;
+        }
+
+        if ( depth > 5000 ) {
+            possibilities.stone = 0.95;
+            possibilities.iron  = 0.2;
+            possibilities.diamond = 0.01;
+            possibilities.emerald = 0.001;
+            diff = 4;
+
+            diff = Math.floor( depth / 2500 + 2 );
+        }
+
+        // No ground after this depth
+        if ( depth > 10000 ) {
+            possibilities.stone = 1;
+        }
     }
     
     function tick( time ) {
         if ( playing ) {
-            update( time );
+            update();
         
             requestAnimationFrame(tick);
         }
@@ -174,6 +174,16 @@
     function reset() {
         points = 0;
         scroll = 0;
+        diff = 1;
+
+        possibilities = {
+            emerald: 0,
+            diamond: 0,
+            gold: 0.02,
+            iron: 0.1,
+            stone: 0.2,
+            ground: 1
+        };
 
         // Clear except the first row
         $('.blockRow').slice(1).remove();
@@ -226,14 +236,6 @@
         });
     }
     $(init);
-    
-    // for( var i = 0; i < 200; i++ ) {
-    //     var j = i + 2;
-        
-    //     setTimeout(function() {
-    //       diff = j; 
-    //     }, diff * 500);
-    // }
     
 }(jQuery));
  /*
