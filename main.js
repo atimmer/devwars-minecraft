@@ -208,7 +208,7 @@
         $(window).on('mousedown', addCursorClass);
         $(window).on('mouseup', removeCursorClass);
         
-        $('body').on( 'click', '.block', clickBlock );
+        $('body').on( 'mousedown', '.block', clickBlock );
         
         // $('.startScreen button').on('click', function() {
         //     if ( ! playing ) {
