@@ -201,8 +201,6 @@
     
     function start() {
         playing = true;
-
-        $('body').removeClass('allow-scroll');
         
         requestAnimationFrame(tick);
     }
@@ -210,12 +208,11 @@
     function lost() {
         stop();
         alert('Lost! Points: ' + points + '.');
+        $('body').animate({scrollTop:0},'750');
     }
     
     function stop() {
         playing = false;
-
-        $('body').addClass('allow-scroll');
     }
     
     function init() {
@@ -227,9 +224,7 @@
         stop();
         
         $(window).on( 'DOMMouseScroll', function(e) {
-            if ( playing ) {
-                e.preventDefault();
-            }
+            e.preventDefault();
         });
         
         $(window).on('mousedown', addCursorClass);
