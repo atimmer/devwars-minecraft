@@ -94,7 +94,7 @@
         
         if ( $this.hasClass( 'grass' ) || $this.hasClass( 'ground' ) || $this.hasClass( 'stone' ) ) {
             $this.addClass('mined');
-            lose();
+            stop();
         } else if ( $this.hasClass( 'mined' ) ) {
             
         } else {
@@ -182,14 +182,18 @@
     
     function start() {
         playing = true;
+
+        $('body').removeClass('allow-scroll');
         
         requestAnimationFrame(tick);
     }
     
-    function lose() {
+    function stop() {
         playing = false;
         
         alert('Lost! Points: ' + points + '.');
+
+        $('body').addClass('allow-scroll');
     }
     
     function init() {

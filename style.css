@@ -38,6 +38,10 @@ body {
   overflow:hidden;
 }
 
+body.allow-scroll {
+    overflow: auto;
+}
+
 header {
   text-align:center;
   background:url(http://i.imgur.com/KnzF4.png) repeat;
