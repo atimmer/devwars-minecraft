@@ -1,6 +1,6 @@
 # DevWars Minecraft Game
 
-Simple minecraft game created during DevWars of 17 Februari 2015.
+Simple minecraft game created during [DevWars of 17 Februari 2015](http://www.twitch.tv/devwars/c/6149336).
 
 Created by [Epenance](https://github.com/Epenance), Anden702 and [atimmer](//github.com/atimmer/)
 
@@ -23,3 +23,7 @@ These are the original objectives from the game:
 > Create a "start game" button at the start of the page that starts the game
 
 We completed 5 objectives and that resulted in 10 points.
+
+## What is DevWars?
+
+DevWars is a competition where developers compete to create something in under an our. More information can be found on [reddit](https://reddit.com/r/devwars) and [twitch](http://twitch.tv/devwars/)
