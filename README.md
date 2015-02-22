@@ -22,7 +22,7 @@ These are the original objectives from the game:
 > Bonus
 > Create a "start game" button at the start of the page that starts the game
 
-We completed 5 objectives and that resulted in 10 points.
+We completed 5 objectives and that resulted in 10 points. In the improved version the bonus object is present as well.
 
 ## What is DevWars?
 
