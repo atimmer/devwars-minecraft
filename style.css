@@ -122,6 +122,10 @@ body.click .gameView  {
   background-image:#d0e1ff;
 }
 
+.stone {
+  background-image:url(http://thewallmachine.com/files/1345578090.jpg);
+}
+
 .gold {
   background-image:url(http://trendminicraft.com/wp-content/uploads/2014/08/minecraft-gold-block-texture-k4pfpdth.png);
 }
