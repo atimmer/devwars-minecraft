@@ -26,7 +26,7 @@
     + '{{/each}}'
     + '</div>';
     template = Handlebars.compile(template);
-    
+
     var pointsDist = {
         iron: 10,
         gold: 20,
@@ -100,7 +100,7 @@
         } else {
             var pointDiff = pointsDist[ $this.prop('class').replace('block ', '') ];
         
-            points += pointDiff
+            points += pointDiff;
             
             $this.addClass('mined');
             
@@ -119,13 +119,21 @@
     function updateScore() {
         $('.score').html(points);
     }
+
+    function maybeMakeNewRow() {
+        var $lastRow = $('.blockRow:last-child');
+        var lastOffset = $lastRow.offset();
+
+        // If we need a new row make one
+        if ( scroll + $(window).height() + 50 > lastOffset.top ) {
+            makeRow();
+        }
+    }
     
     function update( time ) {
         scroll += diff;
-        
-        if ( Math.random() < 0.2 ) {
-            makeRow();
-        }
+
+        maybeMakeNewRow();
         
         if ( time > 5000 ) {
             diff = 6;
@@ -219,7 +227,7 @@
     //     }, diff * 500);
     // }
     
-}(jQuery))
+}(jQuery));
  /*
  stop(); // Hammertime!
  
