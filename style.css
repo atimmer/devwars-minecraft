@@ -1,0 +1,129 @@
+/**
+If this site is good looking, Martin Hobert (Epenance) made it.
+If not i dont know who did the css.
+ */
+ 
+/*   
+      ROFL:ROFL:LOL:ROFL:ROFL
+          ______/|\____
+    L    /          [] \
+   LOL===_      ROFL    \_
+   L     \_______________]
+              I      I
+         /---------------/ 
+         
+*/
+
+@import url(http://fonts.googleapis.com/css?family=VT323);
+
+* {
+  margin:0;
+  padding:0;
+}
+
+html, body {
+  height:100%;
+  font-family: 'VT323';
+}
+
+html {
+  background:url(http://static-minecraftforum.cursecdn.com/1-0-5499-18022/Skins/MinecraftForums/images/bg_black_tile.png) repeat;
+}
+
+
+body {
+  background-image:url(http://static-minecraftforum.cursecdn.com/1-0-5499-18022/Skins/MinecraftForums/images/bg_ground_tile2.png);
+  background-position:top;
+  background-repeat:repeat-x;
+  overflow:hidden;
+}
+
+header {
+  text-align:center;
+  background:url(http://i.imgur.com/KnzF4.png) repeat;
+  color:white;
+  height:75px;
+  line-height:75px;
+}
+
+.gameView {
+  margin:auto;
+  width:450px;
+  min-height:calc(100% - 75px);
+  border-left:5px solid yellow;
+  border-right:5px solid yellow;
+  cursor:url(http://www.dosh.dk/pick.png), auto;
+  
+}
+
+.gameView:before, .gameView:after {
+  display:block;
+  content:"";
+  clear:both;
+}
+
+body.click .gameView  {
+  cursor:url(http://www.dosh.dk/pick-click.png), auto;
+}
+
+.scoreBoard {
+  /*border:5px solid black; */
+  position:fixed;
+  left: calc(50% + 240px);
+  top:80px;
+  border-sizing:border-box;
+  padding:20px;
+  background:white;
+  text-align:center;
+  box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
+}
+
+.startScreen {
+  position:absolute;
+  left: calc(50% - 340px);
+  top:90px;
+}
+
+.sky {
+  height:113px;
+  width:100%;
+  background-image:url(http://i.imgur.com/RHgqn.png);
+  background-size:cover;
+}
+
+.block {
+  width:50px;
+  height:50px;
+  float:left;
+  background-image:url(http://static.planetminecraft.com/files/resource_media/screenshot/1236/pack_3530346.jpg);
+  background-size:50px 50px;
+}
+ 
+.grass {
+  background-image:url(https://lh4.googleusercontent.com/-77USnFl9zQg/AAAAAAAAAAI/AAAAAAAAAAA/XHy7tpd7wqY/photo.jpg);
+}
+
+
+.cloud {
+  background-image:#d0e1ff;
+}
+
+.gold {
+  background-image:url(http://trendminicraft.com/wp-content/uploads/2014/08/minecraft-gold-block-texture-k4pfpdth.png);
+}
+
+.iron {
+  background-image:url(http://whitesheet.weebly.com/uploads/2/6/2/8/26288578/s735932582728017094_p3_i1_w509.jpeg);
+}
+
+.emerald {
+  background-image:url(https://lh5.googleusercontent.com/-oz9VLuVDJ5k/AAAAAAAAAAI/AAAAAAAAABo/Lhase9CaTD8/photo.jpg);
+}
+
+.diamond {
+ background-image:url(http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0245/0136/rrMinecraft_Block_Ore_Diamond_mirror.png); 
+}
+
+.mined {
+  background-image:url(http://static-minecraftforum.cursecdn.com/1-0-5499-18022/Skins/MinecraftForums/images/bg_black_tile.png);
+}
