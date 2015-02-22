@@ -27,24 +27,20 @@ html, body {
 }
 
 html {
-  background:url(http://static-minecraftforum.cursecdn.com/1-0-5499-18022/Skins/MinecraftForums/images/bg_black_tile.png) repeat;
+  background:url(images/bg.png) repeat;
 }
 
 
 body {
-  background-image:url(http://static-minecraftforum.cursecdn.com/1-0-5499-18022/Skins/MinecraftForums/images/bg_ground_tile2.png);
+  background-image:url(images/bg2.png);
   background-position:top;
   background-repeat:repeat-x;
   overflow:hidden;
 }
 
-body.allow-scroll {
-    overflow: auto;
-}
-
 header {
   text-align:center;
-  background:url(http://i.imgur.com/KnzF4.png) repeat;
+  background:url(images/header-bg.png) repeat;
   color:white;
   height:75px;
   line-height:75px;
@@ -56,7 +52,7 @@ header {
   min-height:calc(100% - 75px);
   border-left:5px solid yellow;
   border-right:5px solid yellow;
-  cursor:url(http://www.dosh.dk/pick.png), auto;
+  cursor:url(images/pick.png), auto;
   
 }
 
@@ -67,7 +63,7 @@ header {
 }
 
 body.click .gameView  {
-  cursor:url(http://www.dosh.dk/pick-click.png), auto;
+  cursor:url(images/pick-click.png), auto;
 }
 
 .scoreBoard {
@@ -91,7 +87,7 @@ body.click .gameView  {
 .sky {
   height:113px;
   width:100%;
-  background-image:url(http://i.imgur.com/RHgqn.png);
+  background-image:url(images/sky-bg.png);
   background-size:cover;
 }
 
@@ -109,12 +105,12 @@ body.click .gameView  {
   width:50px;
   height:50px;
   float:left;
-  background-image:url(http://static.planetminecraft.com/files/resource_media/screenshot/1236/pack_3530346.jpg);
+  background-image:url(images/blocks/dirt.png);
   background-size:50px 50px;
 }
  
 .grass {
-  background-image:url(https://lh4.googleusercontent.com/-77USnFl9zQg/AAAAAAAAAAI/AAAAAAAAAAA/XHy7tpd7wqY/photo.jpg);
+  background-image:url(images/blocks/grass.png);
 }
 
 
@@ -123,25 +119,25 @@ body.click .gameView  {
 }
 
 .stone {
-  background-image:url(http://thewallmachine.com/files/1345578090.jpg);
+  background-image:url(images/blocks/stone.png);
 }
 
 .gold {
-  background-image:url(http://trendminicraft.com/wp-content/uploads/2014/08/minecraft-gold-block-texture-k4pfpdth.png);
+  background-image:url(images/blocks/gold.png);
 }
 
 .iron {
-  background-image:url(http://whitesheet.weebly.com/uploads/2/6/2/8/26288578/s735932582728017094_p3_i1_w509.jpeg);
+  background-image:url(images/blocks/iron.png);
 }
 
 .emerald {
-  background-image:url(https://lh5.googleusercontent.com/-oz9VLuVDJ5k/AAAAAAAAAAI/AAAAAAAAABo/Lhase9CaTD8/photo.jpg);
+  background-image:url(images/blocks/emerald.png);
 }
 
 .diamond {
- background-image:url(http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0245/0136/rrMinecraft_Block_Ore_Diamond_mirror.png); 
+ background-image:url(images/blocks/diamond.png); 
 }
 
 .mined {
-  background-image:url(http://static-minecraftforum.cursecdn.com/1-0-5499-18022/Skins/MinecraftForums/images/bg_black_tile.png);
+  background-image:url(images/blocks/mined.png);
 }
