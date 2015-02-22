@@ -174,7 +174,11 @@
     function reset() {
         points = 0;
         scroll = 0;
-        
+
+        // Clear except the first row
+        $('.blockRow').slice(1).remove();
+
+        // Make initial rows
         for ( var i = 0; i < 40; i++ ) {
             makeRow();
         }
@@ -214,12 +218,12 @@
         
         $('body').on( 'mousedown', '.block', clickBlock );
         
-        // $('.startScreen button').on('click', function() {
-        //     if ( ! playing ) {
-        //         reset();
-        //         start();
-        //     }
-        // });
+        $('.startScreen button').on('click', function() {
+             if ( ! playing ) {
+                 reset();
+                 start();
+             }
+        });
     }
     $(init);
     
