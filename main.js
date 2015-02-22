@@ -86,7 +86,7 @@
         
         if ( $this.hasClass( 'grass' ) || $this.hasClass( 'ground' ) || $this.hasClass( 'stone' ) ) {
             $this.addClass('mined');
-            stop();
+            lost();
         } else if ( $this.hasClass( 'mined' ) ) {
             
         } else {
@@ -201,11 +201,14 @@
         
         requestAnimationFrame(tick);
     }
+
+    function lost() {
+        stop();
+        alert('Lost! Points: ' + points + '.');
+    }
     
     function stop() {
         playing = false;
-        
-        alert('Lost! Points: ' + points + '.');
 
         $('body').addClass('allow-scroll');
     }
@@ -213,9 +216,10 @@
     function init() {
         
         $game = $( '.gameView' );
-        
+
         reset();
         start();
+        stop();
         
         $(window).on( 'DOMMouseScroll', function(e) {
             if ( playing ) {
@@ -240,17 +244,17 @@
 }(jQuery));
  /*
  stop(); // Hammertime!
- 
-  Theme		
-Minecraft Endless Scroll Mini-Game	
 
-Objectives		
-1. Pickaxe cursor that has a impact-hit animation when you click (i.e. rotate)		
-2. create rows of minecraft blocks (50x50px) that consist of 9 blocks in each row. The first row of blocks must be grass blocks and above that must be blue sky with clouds		
-3. Page slowly and automatically scrolls down (manual scroll is disabled) loading more blocks as it scrolls		
-4. Randomly generate iron, gold, diamond and emerald ores amongst the general dirt & stone blocks that you can click on and mine for points.		
-5. Add a point score that tallies up the points earned in the game. You lose the game by misclicking on stone/dirt		
+  Theme
+Minecraft Endless Scroll Mini-Game
 
-Bonus		
-Create a "start game" button at the start of the page that starts the game 	
+Objectives
+1. Pickaxe cursor that has a impact-hit animation when you click (i.e. rotate)
+2. create rows of minecraft blocks (50x50px) that consist of 9 blocks in each row. The first row of blocks must be grass blocks and above that must be blue sky with clouds
+3. Page slowly and automatically scrolls down (manual scroll is disabled) loading more blocks as it scrolls
+4. Randomly generate iron, gold, diamond and emerald ores amongst the general dirt & stone blocks that you can click on and mine for points.
+5. Add a point score that tallies up the points earned in the game. You lose the game by misclicking on stone/dirt
+
+Bonus
+Create a "start game" button at the start of the page that starts the game
 */
